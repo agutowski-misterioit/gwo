@@ -1,0 +1,19 @@
+{
+  "name": "gwo",
+  "version": "1.0.0",
+  "description": "rekrutacja",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agutowski-misterioit/gwo.git"
+  },
+  "author": "A.Gutowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agutowski-misterioit/gwo/issues"
+  },
+  "homepage": "https://github.com/agutowski-misterioit/gwo#readme"
+}
