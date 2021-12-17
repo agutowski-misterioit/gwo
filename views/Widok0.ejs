@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head") %>
+    <style>
+        div.container{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        div.tile{
+            width: 25%;
+            margin: 3em;
+            box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: linear 0.2s;
+            border-radius: 5px;
+            background-color: white;
+        }
+        div.tile:hover{
+            box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.6);
+            cursor: pointer;
+        }
+        div.tile div.tile-title{
+            font-size: 3em;
+        }
+    </style>
+<body>
+    <%- include("./partials/nav") %>
+    <div class="container">
+        <div class="tile">
+            <div class="tile-title">Africa</div>
+        </div>
+        <div class="tile">
+            <div class="tile-title">Americas</div>
+        </div>
+        <div class="tile">
+            <div class="tile-title">Asia</div>
+        </div>
+        <div class="tile">
+            <div class="tile-title">Europe</div>
+        </div>
+        <div class="tile">
+            <div class="tile-title">Oceania</div>
+        </div>
+    </div>
+
+    <%- include("./partials/foot") %>
+</body>
+</html>
