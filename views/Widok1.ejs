@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include("./partials/head") %>
+    <style>
+        div.tile{
+            width: 5em;
+            /* height: 5em; */
+            background-color: white;
+        }
+    </style>
 <body>
     <!-- StartNavbarSpace -->
     <%- include("./partials/nav") %>
     <!-- EndNavbarSpace -->
 
     <div class="container">
-        asdnaslkd
+        <div class="table">
+        <% fetchData.forEach( f => { %>
+            <a href="/country/<%= JSON.parse(JSON.stringify(f.name.common)) %>">
+                <div class="tile">
+                    <td><img src='<%= JSON.parse(JSON.stringify(f.flags.svg)) %>' width=50px></td>
+                    <td><%= JSON.parse(JSON.stringify(f.translations.pol.common)) %></td>
+                </div>
+            </a>
+        <% }); %>
+        </div>
     </div>
 
     <!-- StartFooterSpace -->

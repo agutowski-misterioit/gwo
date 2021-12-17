@@ -7,7 +7,7 @@
             justify-content: space-around;
             flex-wrap: wrap;
         }
-        div.tile{
+        a.tile{
             width: 25%;
             margin: 3em;
             box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.1);
@@ -17,33 +17,36 @@
             transition: linear 0.2s;
             border-radius: 5px;
             background-color: white;
+            text-decoration: none;
+            color: black;
         }
-        div.tile:hover{
+        a.tile:hover{
             box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.6);
             cursor: pointer;
         }
-        div.tile div.tile-title{
+        a.tile div.tile-title{
             font-size: 3em;
         }
     </style>
 <body>
     <%- include("./partials/nav") %>
     <div class="container">
-        <div class="tile">
+        <a class="tile" href="/list/africa">
             <div class="tile-title">Africa</div>
-        </div>
-        <div class="tile">
+        </a>
+        <a class="tile" href="/list/americas">
             <div class="tile-title">Americas</div>
-        </div>
-        <div class="tile">
+        </a>
+        <a class="tile" href="/list/asia">
             <div class="tile-title">Asia</div>
-        </div>
-        <div class="tile">
+        </a>
+        <a class="tile" href="/list/europe">
             <div class="tile-title">Europe</div>
-        </div>
-        <div class="tile">
+        </a>
+        <a class="tile" href="/list/oceania">
             <div class="tile-title">Oceania</div>
-        </div>
+        </a>
+
     </div>
 
     <%- include("./partials/foot") %>

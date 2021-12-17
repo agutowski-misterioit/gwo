@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const express = require("express");
-const router_1 = require("./router");
+import express from "express";
+import router from "./router.js";
 const app = express();
 app.listen(3000);
 app.set('view engine', 'ejs');
@@ -10,7 +8,7 @@ app.use((req, res, next) => {
     res.locals.path = req.path;
     next();
 });
-app.use('/', router_1.default);
+app.use('/', router);
 app.use((req, res) => {
     res.status(404).render('404', { title: '404' });
 });

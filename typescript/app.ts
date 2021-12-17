@@ -1,5 +1,5 @@
-import * as express from "express";
-import router from "./router";
+import express from "express";
+import router from "./router.js";
 
 const app = express();
 app.listen(3000);
