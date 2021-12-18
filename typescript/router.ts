@@ -7,7 +7,7 @@ router.get('/', controller.Widok0);
 
 router.get('/list/:region', controller.Widok1);
 
-router.get('/country/:name', controller.Widok2);
+router.get('/list/:region/:name', controller.Widok2);
 
 router.get('/o_mnie', controller.omnie);
 

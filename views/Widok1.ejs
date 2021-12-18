@@ -2,10 +2,36 @@
 <html lang="en">
     <%- include("./partials/head") %>
     <style>
-        div.tile{
-            width: 5em;
-            /* height: 5em; */
+        div.tile-collection{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        div.tile-collection a{
+            text-decoration: none;
+            color: black;
+        }
+        div.tile-collection a div.tile{
+            padding: 1em;
+            margin: 1em;
+            min-width: 6em;
+            height: 6em;
             background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.3);
+            transition: ease 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        div.tile-collection a div.tile:hover{
+            cursor: pointer;
+            box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.5);
+        }
+        div.tile-collection a div.tile div.img{
+            margin-bottom: 1em;
         }
     </style>
 <body>
@@ -14,12 +40,15 @@
     <!-- EndNavbarSpace -->
 
     <div class="container">
-        <div class="table">
+        <div class="header-title">
+            <h2><a href="/">Region</a> / <%= headerTitle %></h2>
+        </div>
+        <div class="tile-collection">
         <% fetchData.forEach( f => { %>
-            <a href="/country/<%= JSON.parse(JSON.stringify(f.name.common)) %>">
+            <a href="/list/<%= headerTitle %>/<%= JSON.parse(JSON.stringify(f.name.common)) %>">
                 <div class="tile">
-                    <td><img src='<%= JSON.parse(JSON.stringify(f.flags.svg)) %>' width=50px></td>
-                    <td><%= JSON.parse(JSON.stringify(f.translations.pol.common)) %></td>
+                    <div class="img"><img src='<%= JSON.parse(JSON.stringify(f.flags.svg)) %>' width=50px></div>
+                    <div class="title"><%= JSON.parse(JSON.stringify(f.name.common)) %></div>
                 </div>
             </a>
         <% }); %>

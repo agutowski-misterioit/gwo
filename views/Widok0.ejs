@@ -2,7 +2,13 @@
 <html lang="en">
     <%- include("./partials/head") %>
     <style>
+        body{
+            background-image: url('https://www.gstatic.com/earth/social/00_generic_facebook-001.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         div.container{
+            min-height: 90vh;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
@@ -10,18 +16,18 @@
         a.tile{
             width: 25%;
             margin: 3em;
-            box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 5px 3px rgba(255,238,144,0.1);
             display: flex;
             justify-content: center;
             align-items: center;
             transition: linear 0.2s;
             border-radius: 5px;
-            background-color: white;
+            background-color: rgba(0,0,0,0.75);
             text-decoration: none;
-            color: black;
+            color: white;
         }
         a.tile:hover{
-            box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.6);
+            box-shadow: 0px 0px 5px 3px rgba(255,238,144,0.5);
             cursor: pointer;
         }
         a.tile div.tile-title{

@@ -17,9 +17,28 @@
         text-align: center;
     }
 </style>
+
 <footer class="foot bg-dark text-light px-4">
-    <div>Wykonane w celach rekrutacji dla Gdańskiego Wydawnictwa Oświatowego przez A.Gutowski, dnia 17.12.2021r.</div>
+    <div>Wykonane w celach rekrutacji dla Gdańskiego Wydawnictwa Oświatowego przez A.Gutowski.</div>
     <div class="py-2">
-        <a class="btn btn-warning" href="/o_mnie">O mnie</a>
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">O mnie</button>
     </div>
 </footer>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">O mnie</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

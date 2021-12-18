@@ -10,8 +10,117 @@
     <!-- EndNavbarSpace -->
 
     <div class="container">
-        <div class="table">
-        <%= JSON.stringify(fetchData) %>
+        <div class="header-title">
+            <h2><a href="/">Region</a> / <a href="/list/<%= headerTitle %>"><%= headerTitle %></a> / <%= fetchData[0].name.common %> </h2>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-8">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>Official name: </td>
+                                    <td><%= fetchData[0].name.official %></td>
+                                </tr>
+                                <% const keyName = Object.keys(fetchData[0].name.nativeName) %>
+                                <tr>
+                                    <td>
+                                    <% if(keyName.lenght > 1){ %>
+                                        Native names:
+                                    <% } else { %>
+                                        Native name:
+                                    <% } %>
+                                    </td>
+                                    <td>
+                                        <% for (let kN of keyName) { %>
+                                            <%= fetchData[0].name.nativeName[kN].official %> (<%= kN %>)
+                                            <% if( keyName.length -1 !== keyName.indexOf(kN)){ %><br/><% } %>
+                                        <% } %>    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <% if(keyName.lenght > 1){ %>
+                                        Languages:
+                                    <% } else { %>
+                                        Language:
+                                    <% } %>
+                                    </td>
+                                    <td>
+                                        <% for (let kN of keyName) {
+                                            if( keyName.length -1 !== keyName.indexOf(kN)){ %>
+                                                <%= fetchData[0].languages[kN] %><br/>
+                                            <% } else { %>
+                                                <%= fetchData[0].languages[kN] %>
+                                            <% }
+                                        } %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Capital: </td>
+                                    <td><%= fetchData[0].capital %></td>
+                                </tr>
+                                <tr>
+                                    <td>Population: </td>
+                                    <td><%= (fetchData[0].population).toLocaleString() %></td>
+                                </tr>
+                                <% const keyCurrency = Object.keys(fetchData[0].currencies) %>
+                                <tr>
+                                    <td>
+                                    <% if(keyCurrency.length > 1){ %>
+                                        Currencies:
+                                    <% } else { %>
+                                        Currency:
+                                    <% } %>
+                                    </td>
+                                    <td>
+                                        <% for (let kC of keyCurrency) {
+                                            if( keyCurrency.length -1 !== keyCurrency.indexOf(kC)){ %>
+                                                <%= kC %> (<%= fetchData[0].currencies[kC].name %>, <%= fetchData[0].currencies[kC].symbol %>)<br/>
+                                            <% } else { %>
+                                                <%= kC %> (<%= fetchData[0].currencies[kC].name %>, <%= fetchData[0].currencies[kC].symbol %>)
+                                            <% }
+                                        } %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <!-- <td>Timezones: </td> -->
+                                    <td><% if(fetchData[0].timezones.length > 1){ %>Timezones:<% } else { %>Timezone:<% } %></td>
+                                    <td class="col-9">
+                                        <% for( tz in fetchData[0].timezones ){ %><%= fetchData[0].timezones[tz] %>;&nbsp;<% } %>
+                                    </td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+                        <!-- <%= JSON.stringify(fetchData[0]) %> -->
+                    </div>
+                    <div class="col-4">
+                        <div class="w-100 d-flex flex-column align-items-center">
+                            <span class="text-muted">flag:</span>
+                            <img class="m-2" style="height: 150px; border:solid 1px gray" src="<%= fetchData[0].flags.svg %>" alt="<%= fetchData[0].flag %>">
+                            <span class="text-muted">emblem:</span>
+                            <img class="m-2" style="height: 150px; border:solid 1px gray" src="<%= fetchData[0].coatOfArms.svg %>" alt="<%= fetchData[0].coatOfArms.svg %>">
+                        </div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>Region: </td>
+                                    <td><%= fetchData[0].region %></td>
+                                </tr>
+                                <tr>
+                                    <td>Subregion: </td>
+                                    <td><%= fetchData[0].subregion %></td>
+                                </tr>
+                                <tr>
+                                    <td>Maps:</td>
+                                    <td><a href="<%= fetchData[0].maps.googleMaps %>" target="_blank">Google Maps</a>,<br/><a href="<%= fetchData[0].maps.openStreetMaps %>" target="_blank">Open Street Maps</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
